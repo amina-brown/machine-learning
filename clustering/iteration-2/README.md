@@ -23,40 +23,41 @@ For the k-means model, I initially used the elbow plot to try to identify the nu
 After deciding to not use the elbow plot, I choose to use the silhouette plots to help make decisions about how many clusters to choose. This also provided me with insight into how the size and specificity of the clusters are correlated. In general, you can see that the larger clusters tend to have lower coefficient values.
 I ran plots for a many numbers of clusters, and while the higher the number, the higher the avg coefficient, I decided that from a users perspective, having too many clusters could be overwhelming. I also realized that this would mean that while some clusters were spot on, others were quite the opposite, and could lead to too much inconsistency in what to expect.
 See some sample silhouette plots here: 
-![5]()
-![25]()
-![50]()
+![5](https://github.com/amina-brown/machine-learning/blob/master/clustering/iteration-2/images/silhouette5.png)
+![25](https://github.com/amina-brown/machine-learning/blob/master/clustering/iteration-2/images/silhouette25.png)
+![50](https://github.com/amina-brown/machine-learning/blob/master/clustering/iteration-2/images/silhouette50.png)
 
 With this information in mind, I decided to look into using 5 clusters, assuming that you could reasonably split a grocery store into that many groups (produce, meats/cheeses, frozen foods, dry goods, misc.). The resulting clusters were quite non-sensical, so I quickly abandoned this idea.
 This led to looking to use 10-15 clusters to emmulate the number of aisles in an average grocery store. Ultimately, I decided on using 15 since it provided a slightly higher avg coefficient without being too overwhelming.
 The final silhouette plot is here:
-![final]()
+![final](https://github.com/amina-brown/machine-learning/blob/master/clustering/iteration-2/images/final_plot.png)
 
 ### Evaluating Results
 To gauge the accuracy of the clusters, I decided to use the size of each one due to the correlation between the size and the specificity. I decided that having most be about the same size (and hopefully accuracy) and one larger one as a catch-all would prove to be a good structure for the user to navigate. 
 The final counts can be seen here:
-![final count]()
+
+![final count](https://github.com/amina-brown/machine-learning/blob/master/clustering/iteration-2/images/final_count.PNG)
 
 As for the content of the clusters, I choose to look at the most common words for each, while also making sure to scan the actual content as well. There were very specific clusters for prepared salads, ice cream, fish and nut butters. See some examples at the bottom of this documentation. A perfect example of why also looking at the content is important is 
 cluster 4. The word count showed promising results for trail mix, which was reflected in many trail mix items being in the cluster, but when looking at the content, the top items are all onions.
 
 Cluster 4 word count:
-![cluster4]()
+![cluster4](https://github.com/amina-brown/machine-learning/blob/master/clustering/iteration-2/images/cluster4-wordcount.PNG)
 
 Cluster 4 items:
-![4 items]()
+![4 items](https://github.com/amina-brown/machine-learning/blob/master/clustering/iteration-2/images/cluster4-items.PNG)
 
 Another cluster that was slightly less successful was cluster 11. This one returned all Whole Foods items, so was specific in that way, but the foods themselves varied and were only clustered due to the Whole Foods labelling. This is extremely
 evident in the word count for this cluster.
-![cluster11]()
+![cluster11](https://github.com/amina-brown/machine-learning/blob/master/clustering/iteration-2/images/cluster11-wordcount.PNG)
 
 ### Successful Clusters
 
 ###### Cluster 3 - Fish
-![3]()
+![3](https://github.com/amina-brown/machine-learning/blob/master/clustering/iteration-2/images/cluster3-wordcount.PNG)
 
 ###### Cluster 5 - Non-frozen Dairy
-![5]()
+![5](https://github.com/amina-brown/machine-learning/blob/master/clustering/iteration-2/images/cluster5-wordcount.PNG)
 
 ###### Cluster 6 - Ice Cream
-![6]()
+![6](https://github.com/amina-brown/machine-learning/blob/master/clustering/iteration-2/images/cluster6-wordcount.PNG)
